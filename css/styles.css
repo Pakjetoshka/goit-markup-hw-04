@@ -103,9 +103,19 @@ body{
     display: block;
 }
 
-
-.nav-item:hover, .nav-item:focus, .nav-item:active{
+.nav-item:hover, .nav-item:focus{
     color: var(--ocean);
+}
+
+.nav-item:active::after{
+    content: "";
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--ocean);
+    gap: 20px;
 }
 
 .adds{
@@ -139,7 +149,12 @@ main{
 
 /* -----------------Main Studio----------------- */
 .studio-first-section{    /* ======first section====== */
-    background-color: var(--navy-blue);
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+    ),
+    url(/images/people-office.jpg);
     padding: 188px 0;
 }
 
@@ -221,6 +236,19 @@ main{
     width: calc((100% - 72px) / 4);
 }
 
+.twosect-list-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 264px;
+    height: 112px;
+    padding: 24px 100px;
+    border: 1px solid var(--light-slate);
+    border-radius: 4px;
+    background: var(--cloud);
+    margin-bottom: 8px;
+}
+
 .third-header-ind{
     color: var(--navy-blue);
     font-size: 20px;
@@ -260,6 +288,28 @@ main{
     background: url(<path-to-image>), lightgray -97.034px -0.927px / 181.897% 251.37% no-repeat;
 }
 
+.team-card-text{
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.team-socials-list{
+    justify-content: center;
+    
+}
+
+.team-socials-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--iris);
+    border-radius: 100%; 
+}
+
+
 .studio-fourth-section{    /* ======fourth section====== */
     padding: 120px 0;
 }
@@ -274,14 +324,37 @@ main{
     width: calc((100% - 48px) / 3);
 }
 
+.box{
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--iris);
+    transform: translateY(100%);
+    transition: transform 250ms;
+}
+
+.box:hover .overlay{
+    transform: translateY(0);
+}
+
+.overlay p{
+    color: #fff;
+    padding: 40px 32px;
+    margin: 0;
+    font-size: 18px;
+}
+
 .card-info{
     padding: 32px 16px;
     border: 1px solid var(--cornflower);
     border-top: none;
-}
-
-.team-card-text{
-    text-align: center;
 }
 
 
