@@ -40,6 +40,7 @@ body{
     width: 1440px;
     color: var(--slate);
     background-color: var(--white);
+    margin: auto;
 }
 
 .carcass-cont{
@@ -70,6 +71,7 @@ body{
 .nav-cont{
     display: flex;
     align-items: center;
+    margin-right: auto;
 }
 
 .logo{
@@ -333,7 +335,7 @@ main{
 }
 
 .sm-link:hover, .sm-link:focus{
-    color: var(--ocean);
+    background-color: var(--ocean);
 }
 
 .team-social-icon{
@@ -361,13 +363,17 @@ main{
                 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
-.project-card:hover .overlay{
+.project-card:hover .overlay p{
     transform: translateY(0%);
 }
 
 .box{
     position: relative;
     overflow: hidden;
+}
+
+.box:hover .overlay{
+    transform: translateY(0);
 }
 
 .overlay{
@@ -379,10 +385,6 @@ main{
     background-color: var(--iris);
     transform: translateY(100%);
     transition: transform 250ms;
-}
-
-.box:hover .overlay{
-    transform: translateY(0);
 }
 
 .overlay p{
